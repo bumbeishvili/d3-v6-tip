@@ -19,7 +19,16 @@ It also fixes one annoying bug, when several DOM tip instances were being create
 
 See [original documentation](https://github.com/caged/d3-tip/blob/master/docs/index.md), but please note changes in `tip.html` API.   
 Short story is that, you will get same arguments in `tip.html()` as `tip.show()` receives, in the same order.
-## common usage of d3-tip-for-v6.
+
+## Include
+In order to include d3-tip in your app with defaul styling
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+```
+and then you can use it like in bellow
 
 
 ```javascript
