@@ -33,7 +33,6 @@ d3.tip = function () {
   tip.show = function () {
 
     var args = Array.prototype.slice.call(arguments)
-    console.log('showing', args)
     if (args[0] instanceof Event) {
        target = args[0].target;
     }
