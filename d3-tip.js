@@ -31,10 +31,9 @@ d3.tip = function () {
   //
   // Returns a tip
   tip.show = function () {
-
     var args = Array.prototype.slice.call(arguments)
     if (args[0] instanceof Event) {
-       target = args[0].target;
+      target = args[0].target;
     }
     if (args[args.length - 1] instanceof SVGElement) target = args.pop()
 
@@ -85,7 +84,14 @@ d3.tip = function () {
       return getNodeEl().attr(n)
     } else {
       var args = Array.prototype.slice.call(arguments)
-      d3.selection.prototype.attr.apply(getNodeEl(), args)
+      if (n == 'class') {
+        // Prevent internal class override internally
+        getNodeEl()
+          .classed(v, true);
+      } else {
+        d3.selection.prototype.attr.apply(getNodeEl(), args)
+      }
+
     }
 
     return tip
@@ -98,7 +104,6 @@ d3.tip = function () {
   //
   // Returns tip or style property value
   tip.style = function (n, v) {
-    // debugger;
     if (arguments.length < 2 && typeof n === 'string') {
       return getNodeEl().style(n)
     } else {
@@ -244,15 +249,19 @@ d3.tip = function () {
   }
 
   function initNode() {
-    var node = d3.select(document.createElement('div'))
-    node
+    let tipNode = d3.select('.d3-tip-lib-node');
+    if (!tipNode.node()) {
+      tipNode = d3.select(document.createElement('div'))
+    }
+    tipNode
+      .classed('d3-tip-lib-node', true)
       .style('position', 'absolute')
       .style('top', '0')
       .style('opacity', '0')
       .style('pointer-events', 'none')
       .style('box-sizing', 'border-box')
 
-    return node.node()
+    return tipNode.node()
   }
 
   function getSVGNode(el) {
