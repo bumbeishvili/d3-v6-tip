@@ -2,6 +2,7 @@
 // Copyright (c) 2013 Justin Palmer
 // ES6 / D3 v4 Adaption Copyright (c) 2016 Constantin Gavrilete
 // Removal of ES6 for D3 v4 Adaption Copyright (c) 2016 David Gotz
+// Adaptation for d3.v6 by bumbeishvili (github.com/bumbeishvili)
 //
 // Tooltips for d3.js SVG visualizations
 
