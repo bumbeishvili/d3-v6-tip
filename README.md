@@ -1,5 +1,5 @@
 # d3.tip for d3.v6
-Famous d3-tip version fitted to the latest - d3.v6 
+A famous d3-tip lib adapted to the latest - d3.v6 version.
 
 ![](https://user-images.githubusercontent.com/6873202/92922793-6e621b00-f447-11ea-933d-50bac9a25fbb.gif)
 
