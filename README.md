@@ -20,7 +20,11 @@ It also fixes one annoying bug, when several DOM tip instances were being create
 See [original documentation](https://github.com/caged/d3-tip/blob/master/docs/index.md), but please note changes in `tip.html` API.   
 Short story is that, you will get same arguments in `tip.html()` as `tip.show()` receives, in the same order.
 
-## Include
+## Include & usage
+
+See   [minimal jsfiddle example here](https://jsfiddle.net/aftjeb0g/2/)
+
+
 In order to include d3-tip in your app with defaul styling
 
 ```html
