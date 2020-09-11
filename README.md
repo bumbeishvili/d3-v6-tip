@@ -11,7 +11,12 @@ Those are:
 * Global d3.event has been removed
 * Every event handler, from now on, will receive event as a first argument
 
+d3-tip version which lies under this repository, is adapted to this change.
 
+It also fixes one annoying bug, when several DOM tip instances were being created , which eventually would lead unexpected and undesirable results.
+
+See [original documentation](https://github.com/caged/d3-tip/blob/master/docs/index.md), but please note changes in `tip.html` API.   
+Short story is that, you will get same arguments in `tip.html()` as `tip.show()` receives, in the same order.
 ## common usage of d3-tip-for-v6.
 
 
@@ -19,7 +24,7 @@ Those are:
 svg = d3.select('svg');
 
 /* Initialize tooltip */
-var tip = d3.tip().attr('class', 'd3-tip').html(d=> d; );
+var tip = d3.tip().attr('class', 'd3-tip').html((EVENT,d)=> d; );
 
 /* Invoke the tip in the context of your visualization */
 svg.call(tip)
@@ -38,7 +43,7 @@ svg.selectAll('rect')
 
 svg.selectAll('rect')
     .on('mouseover', (event,d)=>{
-          if(someCondition) tip.show(event);
+          if(someCondition) tip.show(event,d);
      })
     .on('mouseout', tip.hide)
     
@@ -50,7 +55,7 @@ svg.selectAll('g')
     .on('mouseover', function(event,d) {
           const element = d3.select(this)
                             .select('.particular-element');
-          tip.show(d, element.node())
+          tip.show(event, d, element.node())
      })
     .on('mouseout', tip.hide)
     
