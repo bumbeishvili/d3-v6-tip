@@ -25,7 +25,7 @@ Short story is that, you will get same arguments in `tip.html()` as `tip.show()`
 See   [minimal jsfiddle example here](https://jsfiddle.net/aftjeb0g/2/)
 
 
-In order to include d3-tip in your app with defaul styling
+Include d3-tip in your app with defaul styling
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.js"></script>
