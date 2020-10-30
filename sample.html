@@ -1,0 +1,54 @@
+<html>
+
+<html>
+
+<body>
+    <div style="margin:150px;font-family: Arial, Helvetica, sans-serif;">Hover over bars to see tooltip!</div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src="./d3-tip.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
+    <svg width=800 height=500 style="margin:150px;margin-top:0px"></svg>
+    <script type="module">
+        import {d3Tip} from "./d3-tip.js"
+        const width = 400, height = 100;
+
+        const data = [
+            { "letter": "A", "frequency": 0.08167 },
+            { "letter": "B", "frequency": 0.01492 },
+            { "letter": "C", "frequency": 0.02782 },
+            { "letter": "D", "frequency": 0.04253 },
+            { "letter": "E", "frequency": 0.12702 }
+        ]
+
+
+        const svg = d3.select("svg")
+            .style('overflow', 'visible')
+
+        const y = d3.scaleLinear().domain([0.127, 0,]).range([0, height])
+
+        const rects = svg.append("g")
+            .attr("fill", "aqua")
+            .selectAll("rect")
+            .data(data)
+            .join("rect")
+            .attr("x", (d, i) => i * 50)
+            .attr("y", d => y(d.frequency) - 50)
+            .attr("height", d => y(0) - y(d.frequency))
+            .attr("width", 10)
+
+        // -------- TIP CODE ---------
+        const tip = d3Tip().attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function (event, d) { return JSON.stringify(d); });
+        svg.call(tip);
+        rects.on('mouseenter.tip', tip.show)
+            .on('mouseleave.tip', tip.hide)
+
+
+
+    </script>
+
+</body>
+
+</html>

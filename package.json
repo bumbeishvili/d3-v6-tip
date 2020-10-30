@@ -1,0 +1,27 @@
+{
+  "name": "d3.tip-for-d3.v6",
+  "version": "1.0.0",
+  "description": "D3 tip for d3.v6",
+  "main": "d3-tip.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bumbeishvili/d3.tip-for-d3.v6.git"
+  },
+  "keywords": [
+    "d3",
+    "tip",
+    "v6"
+  ],
+  "author": "dbumbeishvili",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bumbeishvili/d3.tip-for-d3.v6/issues"
+  },
+  "homepage": "https://github.com/bumbeishvili/d3.tip-for-d3.v6#readme",
+  "dependencies": {
+    "d3": "^6.2.0"
+  }
+}

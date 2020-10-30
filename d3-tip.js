@@ -3,16 +3,21 @@
 // ES6 / D3 v4 Adaption Copyright (c) 2016 Constantin Gavrilete
 // Removal of ES6 for D3 v4 Adaption Copyright (c) 2016 David Gotz
 // Adaptation for d3.v6 by bumbeishvili (github.com/bumbeishvili)
-//
+// NPM Publishing by bumbeishvili
+
 // Tooltips for d3.js SVG visualizations
 
-d3.functor = function functor(v) {
-  return typeof v === "function" ? v : function () {
-    return v;
-  };
-};
+let d3 = window.d3;
+if(!d3){
+   d3 = require("d3");
+}
 
-d3.tip = function () {
+export function d3Tip() {
+  const functor = function functor(v) {
+    return typeof v === "function" ? v : function () {
+      return v;
+    };
+  };
 
   var direction = d3_tip_direction,
     offset = d3_tip_offset,
@@ -128,7 +133,7 @@ d3.tip = function () {
   // Returns tip or direction
   tip.direction = function (v) {
     if (!arguments.length) return direction
-    direction = v == null ? v : d3.functor(v)
+    direction = v == null ? v : functor(v)
 
     return tip
   }
@@ -140,9 +145,9 @@ d3.tip = function () {
   // Returns offset or
   tip.offset = function (v) {
     if (!arguments.length) return offset
-    offset = v == null ? v : d3.functor(v)
+    offset = v == null ? v : functor(v)
 
-    return tip
+    return tip;
   }
 
   // Public: sets or gets the html value of the tooltip
@@ -152,7 +157,7 @@ d3.tip = function () {
   // Returns html value or tip
   tip.html = function (v) {
     if (!arguments.length) return html
-    html = v == null ? v : d3.functor(v)
+    html = v == null ? v : functor(v)
 
     return tip
   }
