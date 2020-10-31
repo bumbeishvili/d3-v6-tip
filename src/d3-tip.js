@@ -11,8 +11,6 @@
 import {select,selection} from "d3-selection";
 
 
-console.log(select)
-
 export default function () {
     const functor = function functor(v) {
         return typeof v === "function" ? v : function () {
