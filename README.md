@@ -25,6 +25,13 @@ If you are using npm
 
 ```npm i d3-v6-tip```
 
+And then use it like this in your application
+```javascript
+import { tip as d3tip } from "d3-v6-tip";
+
+const tip = d3tip()
+```
+
 Otherwise, you can load as a standalone library or as part of D3. ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a d3 global is exported:
 
 If you want to load it as part of d3
@@ -35,7 +42,7 @@ If you want to load it as part of d3
 
 <script>
 
-var tip = d3.tip()
+const tip = d3.tip()
 
 </script>
 ```
