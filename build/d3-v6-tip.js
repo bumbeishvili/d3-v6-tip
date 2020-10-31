@@ -1,20 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.d3 = global.d3 || {})));
-}(this, function (exports) { 'use strict';
-
-    // d3.tip
-    // Copyright (c) 2013 Justin Palmer
-    // ES6 / D3 v4 Adaption Copyright (c) 2016 Constantin Gavrilete
-    // Removal of ES6 for D3 v4 Adaption Copyright (c) 2016 David Gotz
-    // Adaptation for d3.v6 by bumbeishvili (github.com/bumbeishvili)
-    // NPM Publishing by bumbeishvili
-
-    // Tooltips for d3.js SVG visualizations
-
-
-    // import * as d3 from d3;
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3-selection')) :
+    typeof define === 'function' && define.amd ? define(['exports', 'd3-selection'], factory) :
+    (factory((global.d3 = global.d3 || {}),global.d3));
+}(this, function (exports,d3Selection) { 'use strict';
 
     function d3Tip () {
         const functor = function functor(v) {
@@ -99,7 +87,7 @@
                     getNodeEl()
                         .classed(v, true);
                 } else {
-                    d3.selection.prototype.attr.apply(getNodeEl(), args)
+                    d3Selection.selection.prototype.attr.apply(getNodeEl(), args)
                 }
 
             }
@@ -121,7 +109,7 @@
                 if (args.length === 1) {
                     var styles = args[0];
                     Object.keys(styles).forEach(function (key) {
-                        return d3.selection.prototype.style.apply(getNodeEl(), [key, styles[key]]);
+                        return d3Selection.selection.prototype.style.apply(getNodeEl(), [key, styles[key]]);
                     });
                 }
             }
@@ -260,9 +248,9 @@
 
         function initNode() {
             let tipNode2 = 2;
-            let tipNode = d3.select('.d3-tip-lib-node');
+            let tipNode = d3Selection.select('.d3-tip-lib-node');
             if (!tipNode.node()) {
-                tipNode = d3.select(document.createElement('div'))
+                tipNode = d3Selection.select(document.createElement('div'))
             }
             tipNode
                 .classed('d3-tip-lib-node', true)
@@ -289,7 +277,7 @@
                 // re-add node to DOM
                 document.body.appendChild(node);
             };
-            return d3.select(node);
+            return d3Selection.select(node);
         }
 
         // Private - gets the screen coordinates of a shape
