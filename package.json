@@ -1,27 +1,31 @@
 {
-  "name": "d3.tip-for-d3.v6",
-  "version": "1.0.0",
-  "description": "D3 tip for d3.v6",
-  "main": "d3-tip.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "d3-v6-tip",
+  "version": "1.0.4",
+  "description": "Test Module",
+  "keywords": [
+    "d3",
+    "d3-module"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/d3-v6-tip.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/bumbeishvili/d3.tip-for-d3.v6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bumbeishvili/d3.tip-for-d3.v6.git"
   },
-  "keywords": [
-    "d3",
-    "tip",
-    "v6"
-  ],
-  "author": "dbumbeishvili",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bumbeishvili/d3.tip-for-d3.v6/issues"
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n d3 -o build/d3-v6-tip.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/d3-v6-tip.js -c -m -o build/d3-v6-tip.min.js",
+    "postpublish": "zip -j build/d3-v6-tip.zip -- LICENSE README.md build/d3-v6-tip.js build/d3-v6-tip.min.js"
   },
-  "homepage": "https://github.com/bumbeishvili/d3.tip-for-d3.v6#readme",
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-es": "3"
+  },
   "dependencies": {
-    "d3": "^6.2.0"
+    "d3-selection": "2"
   }
 }

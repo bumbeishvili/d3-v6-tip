@@ -5,12 +5,11 @@
 <body>
     <div style="margin:150px;font-family: Arial, Helvetica, sans-serif;">Hover over bars to see tooltip!</div>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script type="module" src="./d3-tip.js"></script>
+    <script src="../build/d3-v6-tip.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bumbeishvili/d3-tip-for-v6@4/d3-tip.min.css">
     <svg width=800 height=500 style="margin:150px;margin-top:0px"></svg>
-    <script type="module">
-        import {d3Tip} from "./d3-tip.js"
+    <script >
         const width = 400, height = 100;
 
         const data = [
@@ -38,7 +37,7 @@
             .attr("width", 10)
 
         // -------- TIP CODE ---------
-        const tip = d3Tip().attr('class', 'd3-tip')
+        const tip = d3.tip().attr('class', 'd3-tip')
             .offset([-10, 0])
             .html(function (event, d) { return JSON.stringify(d); });
         svg.call(tip);
