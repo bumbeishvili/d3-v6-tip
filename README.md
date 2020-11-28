@@ -103,3 +103,10 @@ See   [minimal jsfiddle example here](https://jsfiddle.net/aftjeb0g/2/)
 * [cgav](https://github.com/cgav/d3-tip) converted it to d3-v4 and ES6 code
 * [VACLAB](https://github.com/VACLab/d3-tip) removed ES6 specific code for wider browser support
 * [bumbeishvili](https://github.com/bumbeishvili/d3-tip-v6) adapted for newer d3.v6 version
+
+
+## Repo Author
+ [David   B (twitter)](https://twitter.com/dbumbeishvili)  
+ [David   B (linkedin)](https://www.linkedin.com/in/bumbeishvili/)  
+
+I am available for freelance data visualization work. Please [contact me](https://davidb.dev/contact) in case you'd like me to help you with my experience and expertise
