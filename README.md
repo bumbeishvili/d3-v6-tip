@@ -57,7 +57,7 @@ If you want to load it as standalone
 var svg = d3.select('svg');
 
 /* Initialize tooltip */
-var tip = d3.tip().attr('class', 'd3-tip').html((EVENT,d)=> d; );
+var tip = d3.tip().attr('class', 'd3-tip').html((EVENT,d)=> d );
 
     
 /* Invoke the tip in the context of your visualization */
