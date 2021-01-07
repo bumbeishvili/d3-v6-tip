@@ -71,8 +71,6 @@ export default function () {
     tip.hide = function () {
         var nodel = getNodeEl()
         nodel
-            .style('top', 0)
-            .style('left', 0)
             .style('opacity', 0)
             .style('pointer-events', 'none')
         return tip
@@ -339,9 +337,3 @@ export default function () {
 
     return tip
 };
-
-
-
-
-
-
