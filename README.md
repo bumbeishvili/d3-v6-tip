@@ -96,7 +96,7 @@ See   [minimal jsfiddle example here](https://jsfiddle.net/aftjeb0g/2/)
 
 
 ## Style
-for default styling, include this css into your app
+for default styling, include this [css file](https://github.com/bumbeishvili/d3-v6-tip/blob/master/src/d3-tip.css) into your app
 ```css
 .d3-tip {
   font-family: Arial, Helvetica, sans-serif;
