@@ -24,12 +24,13 @@ export default function () {
         node = initNode(),
         svg = null,
         point = null,
-        target = null
+        target = null,
+        rootElement = functor(document.body)
 
     function tip(vis) {
         svg = getSVGNode(vis)
         point = svg.createSVGPoint()
-        document.body.appendChild(node)
+        rootElement().appendChild(node)
     }
 
     // Public - show the tooltip on the screen
@@ -48,8 +49,8 @@ export default function () {
             nodel = getNodeEl(),
             i = directions.length,
             coords,
-            scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
-            scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft
+            scrollTop = document.documentElement.scrollTop || rootElement().scrollTop,
+            scrollLeft = document.documentElement.scrollLeft || rootElement().scrollLeft
 
         nodel.html(content)
             .style('position', 'absolute')
@@ -155,6 +156,18 @@ export default function () {
     tip.html = function (v) {
         if (!arguments.length) return html
         html = v == null ? v : functor(v)
+
+        return tip
+    }
+
+    // Public: sets or gets the root element anchor of the tooltip
+    //
+    // v - the html rootElement 
+    //
+    // Returns root node of tip
+    tip.rootElement = function (v) {
+        if (!arguments.length) return rootElement
+        rootElement = v == null ? v : functor(v)
 
         return tip
     }
