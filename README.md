@@ -1,3 +1,6 @@
+[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+
+
 # d3-v6-tip
 A famous d3-tip lib adapted to the latest - d3.v6 version.
 
